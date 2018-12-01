@@ -82,5 +82,5 @@ _Warning_ : the build was tested only for linux.
 ## 3. HOWTO
 
 -   HTTP2 support.
--   HTTP responce parsing.
+-   HTTP response parsing.
 -   Bindings for Python.
