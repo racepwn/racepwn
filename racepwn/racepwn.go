@@ -37,17 +37,24 @@ func racepwnRunAsServer(hostname string) {
 
 func racepwnRun(r io.Reader) []byte {
 	decoder := json.NewDecoder(r)
+	var statuses []race.RaceStatus
 	var jobs []race.RaceJob
 	if err := decoder.Decode(&jobs); err != nil {
 		fmt.Fprintln(os.Stderr, "cannot read from stdin:", err)
 		return []byte{}
 	}
 	for _, job := range jobs {
-		err := race.Run(&job)
+		raceStatus, err := race.Run(&job)
 		if err != nil {
 			fmt.Fprintln(os.Stderr, "cannot apply race job:", err)
-			return []byte{}
+			return []byte(err.Error())
 		}
+		statuses = append(statuses, *raceStatus)
 	}
-	return []byte("success")
+	statusesJSON, err := json.Marshal(statuses)
+	if err != nil {
+		fmt.Fprintln(os.Stderr, "cannot marshal json:", err)
+		return []byte(err.Error())
+	}
+	return statusesJSON
 }

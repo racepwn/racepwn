@@ -1,5 +1,4 @@
 #!/bin/sh
 
 rm -rf build; mkdir build && cd build
-cmake .. && make
-go build ../racepwn
+cmake .. && make $@

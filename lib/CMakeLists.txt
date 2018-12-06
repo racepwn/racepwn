@@ -23,17 +23,29 @@ include_directories(
 )
 set (SOURCES
     ./src/race.c
-    ./src/race_utils.c
-    ./src/rraw.c
-    ./src/race_module.c
+    ./src/race_job.c
+    ./src/race_raw.c
+    ./src/race_connection.c
+    ./src/race_storage.c
+    ./src/race_error.c
 )
 
 set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
 
 install(DIRECTORY
   include/
+  ${CMAKE_CURRENT_BINARY_DIR}/../../lib/include/
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/race
 )
 
-add_library(${TARGET} STATIC ${SOURCES})
+add_library(${TARGET} SHARED ${SOURCES})
 target_link_libraries(${TARGET} ${LINKLIBS})
+
+add_library(${TARGET}static STATIC ${SOURCES})
+target_link_libraries(${TARGET}static ${LINKLIBS})
+
+install(
+  TARGETS ${TARGET}
+  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)

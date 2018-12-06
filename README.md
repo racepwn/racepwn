@@ -28,7 +28,6 @@ Library support two race types:
             "delay_time_usec": 10000, // time delay between two request parts
             "last_chunk_size": 10 // last request chunck size
         },
-        "body_type": "raw", // request body type
         "raw": {
             "host": "tcp://localhost:8080", // hostname and port
             "ssl": false, // use ssl flag
@@ -82,5 +81,5 @@ _Warning_ : the build was tested only for linux.
 ## 3. HOWTO
 
 -   HTTP2 support.
--   HTTP responce parsing.
+-   HTTP response parsing.
 -   Bindings for Python.
