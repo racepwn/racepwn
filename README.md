@@ -78,6 +78,26 @@ To start the build process, run `./build.sh`.
 
 _Warning_ : the build was tested only for linux.
 
+### 2.3. Build for MacOS
+
+1. Install dependencies
+
+```sh
+brew install go openssl libevent cmake gcc
+```
+
+2. Export LIBRARY_PATH
+
+```sh
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+```
+
+3. Build
+```sh
+./macos_build.sh
+```
+
+
 ## 3. HOWTO
 
 -   HTTP2 support.
