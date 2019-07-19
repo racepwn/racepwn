@@ -29,8 +29,7 @@ func racepwnRunAsServer(hostname string) {
 		defer r.Body.Close()
 		w.Write(racepwnRun(r.Body))
 	})
-	err := http.ListenAndServe(hostname, nil)
-	if err != nil {
+	if err := http.ListenAndServe(hostname, nil); err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
 }
@@ -41,7 +40,7 @@ func racepwnRun(r io.Reader) []byte {
 	var jobs []race.RaceJob
 	if err := decoder.Decode(&jobs); err != nil {
 		fmt.Fprintln(os.Stderr, "cannot read from stdin:", err)
-		return []byte{}
+		return nil
 	}
 	for _, job := range jobs {
 		raceStatus, err := race.Run(&job)
