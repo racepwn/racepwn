@@ -2,7 +2,6 @@ find_package(OpenSSL REQUIRED)
 find_package(Event REQUIRED)
 
 set (LINKLIBS
-    "-Wl,-zrelro"
     ${OPENSSL_LIBRARIES}
     ${EVENT_LIBRARIES}
 )

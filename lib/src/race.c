@@ -1,4 +1,6 @@
 #include "race_int.h"
+// Fix error with strcasecmp
+#include <strings.h>
 
 race_t *race_new(void)
 {
