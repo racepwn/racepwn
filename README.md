@@ -9,7 +9,7 @@ RacePWN is a librace library and a racepwn utility that are designed to test a r
 **librace** is a library written in the C programming language and designed to create and send multiple requests to a single host over the network.
 Library support two race types:
 
-1. **Paralell** - in this mode, a separate connection is created for each request. Requests are sent at the same time (using nonblocking socket write). Optionally, sending a request can be divided into 2 parts. The first is sending the main part of the request, the second is sending the last part of the request, after some time. The delay time as well as the size of the last part can be set.
+1. **Parallel** - in this mode, a separate connection is created for each request. Requests are sent at the same time (using non-blocking socket write). Optionally, sending a request can be divided into 2 parts. The first is sending the main part of the request, the second is sending the last part of the request, after some time. The delay time as well as the size of the last part can be set.
 
 2. **Pipeline** - in this mode, requests are glued together into one large request, which is sent through one connection.
 
