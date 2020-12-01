@@ -97,6 +97,21 @@ export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 ./macos_build.sh
 ```
 
+### 2.4. Use with Docker
+1. Build and run
+```
+docker build -t racepwn .
+```
+
+```
+docker run -it racepwn bash
+```
+
+2. Launch the app
+```
+racepwn < /home/config.json
+```
+
 
 ## 3. HOWTO
 
