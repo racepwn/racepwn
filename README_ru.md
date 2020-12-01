@@ -78,6 +78,21 @@ racepwn -host "localhost:8080"
 
 _Внимание_ : сборка тестировалась только для linux.
 
+### 2.3. Запуск с помощью Docker
+1. Собираем образ и запускаем
+```
+docker build -t racepwn .
+```
+
+```
+docker run -it racepwn bash
+```
+
+2. Запускаем приложение в контейнере
+```
+racepwn < /home/config.json
+```
+
 ## 3. Что нужно еще сделать
 
 -   Поддержка HTTP2.
