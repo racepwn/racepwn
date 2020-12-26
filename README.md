@@ -62,6 +62,11 @@ The hostname and port must be specified using the `-hostname` flag.
 racepwn -host "localhost:8080"
 ```
 
+Example
+```
+curl -i -X POST localhost:8080/race --data @<(cat config.json)
+```
+
 ## 2. Installing
 
 ### 2.1. Dependences
@@ -69,7 +74,7 @@ racepwn -host "localhost:8080"
 -   clang or gcc
 -   golang
 -   libevent (libevent-dev)
--   openssl
+-   openssl (libssl-dev)
 -   cmake
 
 ### 2.2. Build

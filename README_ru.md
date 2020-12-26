@@ -41,7 +41,7 @@ RacePWN - это библиотека librace а также утилита racep
 ]
 ```
 
-Поддеживаются 2 режима работы. Запуск как консольная утилита, а также как веб-сервис.
+Поддерживаются 2 режима работы. Запуск как консольная утилита, а также как веб-сервис.
 
 #### **Консольная утилита:**
 
@@ -59,7 +59,12 @@ racepwn < config.json
 Пример запуска:
 
 ```
-racepwn -host "localhost:8080"
+racepwn -hostname "localhost:8080"
+```
+
+Пример
+```
+curl -i -X POST localhost:8080/race --data @<(cat config.json)
 ```
 
 ## 2. Установка
@@ -69,7 +74,7 @@ racepwn -host "localhost:8080"
 -   clang или gcc
 -   golang
 -   libevent (libevent-dev)
--   openssl
+-   openssl (libssl-dev)
 -   cmake
 
 ### 2.2. Cборка
