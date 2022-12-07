@@ -34,7 +34,7 @@ Library support two race types:
             "race_param": [
                 {
                     // race data parameters
-                    "data": "GET / HTTP/1.1\r\nHost: example.com\r\n\r\n", // response body
+                    "data": "GET / HTTP/1.1\r\nHost: example.com\r\n\r\n", // raw HTTP request
                     "count": 100 // packets count
                 }
             ]
